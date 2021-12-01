@@ -6,7 +6,9 @@ import {
     multiplyBy12ThenHalve,
     divideThenMultiply,
     returnAsAString,
-    makeLuckyGreeting
+    makeLuckyGreeting,
+    getSecondItem,
+    getLastItem
 } from '../functions.js';
 
 const { test, skip } = QUnit;
@@ -150,12 +152,54 @@ test('makeLuckyGreeting should take in two numbers and return a greeting announc
         const actual3 = makeLuckyGreeting(8, 12);
 
 
-        expect.equal(actual1, expected1, 'should return "Todays lucky number is 4');
-        expect.equal(actual2, expected2, 'should return "Todays lucky number is 10');
-        expect.equal(actual3, expected3, 'should return "Todays lucky number is 20');
+        expect.equal(actual1, expected1, 'should return "Todays lucky number is 4"');
+        expect.equal(actual2, expected2, 'should return "Todays lucky number is 10"');
+        expect.equal(actual3, expected3, 'should return "Todays lucky number is 20"');
 
     });
-    
+
+test('getSecondItem should take an array and return the second item in the array',
+    (expect) => {
+        let expected1 = 'lemon';
+
+        let actual1 = getSecondItem(['lime', 'lemon', 'melon']);
+
+        let expected2 = 'punk';
+
+        let actual2 = getSecondItem(['rock', 'punk', 'pop']);
+        
+        let expected3 = 'truck';
+
+        let actual3 = getSecondItem(['car', 'truck', 'plane']);
+
+
+        expect.equal(actual1, expected1, 'should return "lemon"');
+        expect.equal(actual2, expected2, 'should return "punk"');
+        expect.equal(actual3, expected3, 'should return "Truck"');
+
+    });
+        
+test('getLastItem should take an array and return the last item in the array',
+    (expect) => {
+        let expected1 = 'melon';
+
+        let actual1 = getLastItem(['lime', 'lemon', 'melon']);
+
+        let expected2 = 'pop';
+
+        let actual2 = getLastItem(['rock', 'punk', 'pop']);
+        
+        let expected3 = 'plane';
+
+        let actual3 = getLastItem(['car', 'truck', 'plane']);
+
+
+        expect.equal(actual1, expected1, 'should return "melon"');
+        expect.equal(actual2, expected2, 'should return "pop"');
+        expect.equal(actual3, expected3, 'should return "plane"');
+
+    });
+
 skip('this test should be skipped', (expect) => {
     const expected = true;
 
